@@ -1,0 +1,65 @@
+resource kb "Karl Benedict" {
+	limits {
+		dailymax 2h
+		weeklymax 5h
+		monthlymax 10h
+	}
+	rate 385
+}
+
+resource nh "Nancy Hoebelheinrich" {
+	limits {
+		dailymax 4h
+		weeklymax 15h
+		monthlymax 30h
+	}
+	rate 1000
+}
+
+resource ga "Graduate Assistant" {
+	limits {
+		dailymax 4h
+		weeklymax 10h
+		monthlymax 43h
+	}
+	rate 135	
+}
+
+resource webY1 "Web Developer - Year 1" {
+	limits {
+		dailymax 4h
+		weeklymax 10h
+		monthlymax 20h
+		yearlymax 70h
+	}
+	rate 56.90		
+}
+
+resource webY2 "Web Developer - Year 2" {
+	limits {
+		dailymax 8h
+		weeklymax 20h
+		monthlymax 40h
+		yearlymax 264h
+	}
+	rate 56.90		
+}
+
+resource webY3 "Web Developer - Year 3" {
+	limits {
+		dailymax 8h
+		weeklymax 20h
+		monthlymax 40h
+		yearlymax 264h
+	}
+	rate 56.90		
+}
+
+resource ab "Advisory Board" {
+	efficiency 1.0, 
+	rate 0
+}
+resource eb "Editorial Board" {
+	Efficiency 1.0,
+	rate 0
+}

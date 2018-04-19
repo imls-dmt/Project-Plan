@@ -1,0 +1,74 @@
+account pi_cost "PI effort cost" {
+	account pi_salary "PI salary" {
+		credits 2018-07-01 "Year 1" 2146,
+				2019-07-01 "Year 2" 2210,
+				2020-07-01 "Year 3" 2277
+	}
+	account pi_fringe "PI fringe" {
+		credits 2018-07-01 "Year 1" 637,
+				2019-07-01 "Year 2" 650,
+				2020-07-01 "Year 3" 674
+	}
+}
+account coi_cost "Co-I effort cost" {
+	credits 2018-07-01 "Year 1" 18000,
+			2019-07-01 "Year 2" 18000,
+			2020-07-01 "Year 3" 18000
+
+}
+account ga_cost "Graduate assistant effort cost" {
+	account ga_stipend "Graduate assistant stipend" {
+		credits 2018-07-01 "Year 1" 8776,
+				2019-07-01 "Year 2" 9039,
+				2020-07-01 "Year 3" 9310
+	}
+	account ga_tuition "Graduate student tuition" {
+		credits 2018-07-01 "Year 1" 2158,
+				2019-07-01 "Year 2" 2287,
+				2020-07-01 "Year 3" 2424
+	}
+	account ga_insurance "Graduate student insurance" {
+		credits 2018-07-01 "Year 1" 2236,
+				2019-07-01 "Year 2" 2460,
+				2020-07-01 "Year 3" 2706
+	}
+	account ga_fringe "Graduate student fringe benefits" {
+		credits 2018-07-01 "Year 1" 88,
+				2019-07-01 "Year 2" 90,
+				2020-07-01 "Year 3" 93
+	}
+}
+account devel_cost "Web developer cost" {
+		credits 2018-07-01 "Year 1" 4000,
+				2019-07-01 "Year 2" 15000,
+				2020-07-01 "Year 3" 15000
+	}
+account participants "Participant costs" {
+	account participant_travel "Participant travel costs" {
+		credits 2018-07-01 "Year 1" 10500,
+				2019-07-01 "Year 2" 10500,
+				2020-07-01 "Year 3" 10500
+	}
+	account participant_other "Workshop logistics costs" {
+		credits 2018-07-01 "Year 1" 4500,
+				2019-07-01 "Year 2" 4500,
+				2020-07-01 "Year 3" 4500
+	}
+}
+account travel "Travel costs" {
+	account pi_travel "PI travel costs" {
+		credits 2018-07-01 "Year 1" 1949,
+				2019-07-01 "Year 2" 2000,
+				2020-07-01 "Year 3" 2000
+	}
+	account coi_travel "Co-I travel costs" {
+		credits 2018-07-01 "Year 1" 2053,
+				2019-07-01 "Year 2" 2000,
+				2020-07-01 "Year 3" 2000
+	}
+	account ga_travel "Graduate assistant travel costs" {
+		credits 2018-07-01 "Year 1" 1949,
+				2019-07-01 "Year 2" 2000,
+				2020-07-01 "Year 3" 2000
+	}
+}
