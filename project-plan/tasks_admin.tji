@@ -1,0 +1,75 @@
+task admin "Administrative" {
+    task form_ab "Form Advisory Board" {
+        end 2018-08-01
+        allocate nh
+        effort 8h
+    }
+    
+    task form_eb "Form Editorial Board" {
+        end 2018-08-01
+        allocate kb
+        effort 8h
+    }
+    
+    task hire_ga_y1 "Hire Graduate Assistant (Year 1)" {
+        end 2018-08-01
+        allocate kb
+        duration 4w
+        limits {monthlymax 8h {resources kb}}
+    }
+    
+    task hire_ga_y2 "Hire Graduate Assistant (Year 2)" {
+        end 2019-08-01
+        allocate kb
+        duration 4w
+        limits {monthlymax 8h {resources kb}}
+    }
+    
+    task hire_ga_y3 "Hire Graduate Assistant (Year 3)" {
+        end 2020-08-01
+        allocate kb
+        duration 4w
+        limits {monthlymax 8h {resources kb}}
+    }
+    
+    task form_selection_wg "Form Selection Criteria Working Group" {
+        start 2018-08-15
+        allocate nh
+        duration 2w
+        limits {weeklymax 4h {resources nh}}
+        depends admin.form_ab
+    }
+
+    task form_metadata_wg "Form Metadata Enhancement Working Group" {
+        start 2018-08-15
+        allocate kb
+        duration 2w
+        limits {weeklymax 4h {resources kb}}
+        depends admin.form_ab
+    }
+
+    task hire_web "Hire Web Application Developer" {
+        start 2018-10-01
+        allocate kb
+        duration 6w
+        limits {weeklymax 4h {resources kb}}
+    }
+    
+    task reports "Project Reports" {
+        task report_y1 "Year 1 - Interim Report" {
+            end 2019-06-30
+            allocate kb
+            effort 20h
+        }
+        task report_y2 "Year 2 - Interim Report" {
+            end 2020-06-30
+            allocate kb
+            effort 20h
+        }
+        task report_y3 "Year 3 - Final Report" {
+            end 2021-06-30
+            allocate kb
+            effort 30h
+        }
+    }
+}

@@ -1,0 +1,14 @@
+task metadata "Develop Metadata Enhancement Working Group" {
+    task draft "Develop Draft Enhanced Metadata Model Recommendation" {
+        allocate kb,nh,ab
+        duration 3m
+        depends admin.form_metadata_wg
+        limits {maximum 16h {resources kb,nh}}
+    }
+    task final "Develop Final Enhanced Metadata Model" {
+        allocate kb,nh,ab
+        duration 10w
+        depends !draft
+        limits {maximum 16h {resources kb,nh}}
+    }
+}

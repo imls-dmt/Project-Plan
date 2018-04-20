@@ -25,41 +25,33 @@ resource ga "Graduate Assistant" {
 	rate 135	
 }
 
-resource webY1 "Web Developer - Year 1" {
+resource web "Web Developer" {
 	limits {
 		dailymax 4h
 		weeklymax 10h
 		monthlymax 20h
-		yearlymax 70h
-	}
-	rate 56.90		
-}
-
-resource webY2 "Web Developer - Year 2" {
-	limits {
-		dailymax 8h
-		weeklymax 20h
-		monthlymax 40h
-		yearlymax 264h
-	}
-	rate 56.90		
-}
-
-resource webY3 "Web Developer - Year 3" {
-	limits {
-		dailymax 8h
-		weeklymax 20h
-		monthlymax 40h
-		yearlymax 264h
+		maximum 70h {
+		    start 2018-07-01
+		    end 2019-06-30
+		}
+		maximum 264h {
+		    start 2019-07-01
+		    end 2020-06-30
+		}
+		maximum 264h {
+		    start 2020-07-01
+		    end 2021-06-30
+		}
 	}
 	rate 56.90		
 }
 
 resource ab "Advisory Board" {
-	efficiency 1.0, 
+	efficiency 0 
 	rate 0
 }
+
 resource eb "Editorial Board" {
-	Efficiency 1.0,
+	efficiency 0
 	rate 0
 }

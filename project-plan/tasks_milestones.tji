@@ -1,0 +1,26 @@
+task milestones "Milestones" {
+    task y1_resources "200 Resources in Clearinghouse" {
+        milestone
+        start 2019-06-30
+    }
+    task y1_disciplines "Two additional disciplines represented in Clearinghouse" {
+        milestone
+        start 2019-06-30
+    }
+    task y2_resources "300 Resources in Clearinghouse" {
+        milestone
+        start 2020-06-30
+    }
+    task y2_disciplines "Three (total) additional disciplines represented in Clearinghouse" {
+        milestone
+        start 2020-06-30
+    }
+    task y3_resources "400 Resources in Clearinghouse" {
+        milestone
+        start 2021-06-30
+    }
+    task y3_disciplines "Four (total) additional disciplines represented in Clearinghouse" {
+        milestone
+        start 2021-06-30
+    }
+}

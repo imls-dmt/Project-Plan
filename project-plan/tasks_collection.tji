@@ -1,0 +1,16 @@
+task collection "Collections Development and Selection Criteria Tasks" {
+    task selection_policy "Develop Selection Criteria / Collection Development Policy" {
+        task draft "Develop Draft Selection Criteria Policy" {
+            allocate kb,nh,ab
+            duration 3m
+            depends admin.form_selection_wg
+            limits {maximum 16h {resources kb,nh}}
+        }
+        task final "Develop Final Criteria Policy" {
+            allocate kb,nh,ab
+            duration 10w
+            depends !draft
+            limits {maximum 16h {resources kb,nh}}
+        }
+    }
+}

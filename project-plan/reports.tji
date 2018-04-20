@@ -1,0 +1,21 @@
+taskreport breakdown "reports/ProjectBreakdown" {
+  formats html
+  caption "IMLS Master Project Breakdown"
+  headline "IMLS Master Project Breakdown"
+  columns name {width 300}, effort {width 100 scale hour}, chart {width 700 scale month}
+  # Don't hide any resource, meaning show them all.
+  hideresource 0
+  # rolluptask summary_report
+  sorttasks tree, index.up
+}
+
+taskreport breakdown_noresources "reports/ProjectBreakdown-NoResources" {
+  formats html
+  caption "IMLS Master Project Breakdown"
+  headline "IMLS Master Project Breakdown"
+  columns name {width 300}, effort {width 100 scale hour}, chart {width 700 scale month}
+  # Don't hide any resource, meaning show them all.
+  hideresource 1
+  # rolluptask summary_report
+  sorttasks tree, index.up
+}
