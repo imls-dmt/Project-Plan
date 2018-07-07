@@ -1,17 +1,21 @@
 macro SPRINT [
         	task plan "Plan" {
         		allocate kb,nh,web,ab
-        		duration 2h
+        		effort 8h
+        		priority 600
+        		limits {maximum 2h {resources kb,nh,web,ab}} 
         	}
         	task execute "Execution"{
         		allocate web
         		effort ${1}
+        		priority 600
         		depends !plan
         	}
         	task review "Review"{
 				allocate kb,nh,web,ab
-        		duration 2h
-        		depends !execute
+        		effort 8h
+        		priority 600
+        		limits {maximum 2h {resources kb,nh,web,ab}}
         	}
 ]
 
