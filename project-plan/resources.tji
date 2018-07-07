@@ -1,8 +1,8 @@
 resource kb "Karl Benedict" {
 	limits {
-		dailymax 2h
-		weeklymax 5h
-		monthlymax 10h
+		dailymax 8h
+		weeklymax 20h
+		monthlymax 20h
 	}
 	rate 385
 }
@@ -27,9 +27,8 @@ resource ga "Graduate Assistant" {
 
 resource web "Web Developer" {
 	limits {
-		dailymax 4h
-		weeklymax 10h
-		monthlymax 20h
+		weeklymax 20h
+		monthlymax 80h
 		maximum 70h {
 		    start 2018-07-01
 		    end 2019-06-30
@@ -48,6 +47,16 @@ resource web "Web Developer" {
 
 resource ab "Advisory Board" {
 	efficiency 0 
+	rate 0
+}
+
+resource awg "Assessment Working Group" {
+	efficiency 0 
+	rate 0
+}
+
+resource cwg "Collection Working Group" {
+	efficiency 0
 	rate 0
 }
 

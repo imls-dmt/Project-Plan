@@ -1,0 +1,62 @@
+task web "Web Development" {
+	task search_01 "Search Interface - Phase 1" {
+		depends metadata.metadata_development.sprints.sprint_02
+		task sprint_01 "Sprint" {
+			${SPRINT "20h"}
+		}
+		task sprint_02 "Sprint" {
+			depends !sprint_01
+			${SPRINT "20h"}
+		}
+	}
+	task search_02 "Search Interface - Phase 2" {
+		depends usability.usability_01
+		task sprint_01 "Sprint" {
+			${SPRINT "20h"}
+		}
+		task sprint_02 "Sprint" {
+			depends !sprint_01
+			${SPRINT "20h"}
+		}
+	}
+	task search_03 "Search Interface - Final" {
+		depends usability.usability_02
+		task sprint_01 "Sprint" {
+			${SPRINT "20h"}
+		}
+		task sprint_02 "Sprint" {
+			depends !sprint_01
+			${SPRINT "20h"}
+		}
+	}
+	task assessment_01 "Assessment Interface - Phase 1" {
+		depends assessment.assessment_development.sprints.sprint_02
+		task sprint_01 "Sprint" {
+			${SPRINT "30h"}
+		}
+		task sprint_02 "Sprint" {
+			depends !sprint_01
+			${SPRINT "30h"}
+		}
+	}
+	task assessment_02 "Assessment Interface - Phase 2" {
+		depends usability.usability_01
+		task sprint_01 "Sprint" {
+			${SPRINT "30h"}
+		}
+		task sprint_02 "Sprint" {
+			depends !sprint_01
+			${SPRINT "30h"}
+		}
+	}
+	task assessment_03 "Assessment Interface - Final" {
+		depends usability.usability_02
+		task sprint_01 "Sprint" {
+			${SPRINT "20h"}
+		}
+		task sprint_02 "Sprint" {
+			depends !sprint_01
+			${SPRINT "20h"}
+		}
+	}
+}

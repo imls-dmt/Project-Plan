@@ -1,0 +1,36 @@
+task assessment "Assessment" {
+	task assessment_planning "Planning" {
+		task draft "Draft Recommendation" {
+			allocate kb,nh,awg
+			duration 3m
+			depends admin.form_assessment_wg
+			limits {maximum 16h {resources kb,nh}}
+		}
+		task final "Final Assessment Model" {
+			allocate kb,nh,awg
+			duration 10w
+			depends !draft
+			limits {maximum 16h {resources kb,nh}}
+		}
+		task release_plan "Assessment Model Release Plan" {
+			allocate kb,nh,awg,web
+			duration 1m
+			depends admin.hire_web
+			depends !final
+			limits {maximum 16h {resources kb,nh,web}}
+		}
+	}
+
+	task assessment_development "Implementation" {
+		task sprints "Development" {
+			depends !!assessment_planning.release_plan
+			task sprint_01 "Sprint" {
+				${SPRINT "40h"}
+			}
+			task sprint_02 "Sprint" {
+				depends !sprint_01
+				${SPRINT "40h"}
+			}
+		}
+	}
+}

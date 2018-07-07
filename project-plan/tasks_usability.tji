@@ -1,0 +1,10 @@
+task usability "Usability Testing" {
+	task usability_01 "Phase 1" {
+		depends web.search_01
+		duration 4w
+	}
+	task usability_02 "Phase 2" {
+		depends web.search_02, web.assessment_01
+		duration 4w
+	}
+}

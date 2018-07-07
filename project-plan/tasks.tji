@@ -1,8 +1,9 @@
 include "tasks_milestones.tji"
-include "tasks_admin.tji"
-include "tasks_collection.tji"
 include "tasks_metadata.tji"
-include "tasks_usability.tji"
+include "tasks_assessment.tji"
 include "tasks_web.tji"
+include "tasks_usability.tji"
+
+include "tasks_collection.tji"
 include "tasks_outreach.tji"
-include "tasks_meetings.tji"
+include "tasks_admin.tji"

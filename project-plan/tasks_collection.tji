@@ -1,7 +1,7 @@
-task collection "Collections Development and Selection Criteria Tasks" {
+task collection "Collections Development" {
     task selection_policy "Develop Selection Criteria / Collection Development Policy" {
         task draft "Develop Draft Selection Criteria Policy" {
-            allocate kb,nh,ab
+            allocate kb,nh,cwg
             duration 3m
             depends admin.form_selection_wg
             limits {maximum 16h {resources kb,nh}}
@@ -12,5 +12,44 @@ task collection "Collections Development and Selection Criteria Tasks" {
             depends !draft
             limits {maximum 16h {resources kb,nh}}
         }
+    }
+    task crowdsource_01 "Collection Development Crowdsource Event" {
+    	task planning "Planning" {
+    		effort 8h
+    		precedes !execution
+    		allocate nh, ga
+    		limits {maximum 2h {resources nh}}
+    	}
+    	task execution "Execution" {
+    		end 2019-06-30
+    		duration 4h
+    		allocate nh,kb,ga
+    	}
+    }
+    task crowdsource_02 "Collection Development Crowdsource Event" {
+    	task planning "Planning" {
+    		effort 8h
+    		precedes !execution
+    		allocate nh, ga
+    		limits {maximum 2h {resources nh}}
+    	}
+    	task execution "Execution" {
+    		end 2020-06-30
+    		duration 4h
+    		allocate nh,kb,ga
+    	}
+    }
+    task crowdsource_03 "Collection Development Crowdsource Event" {
+    	task planning "Planning" {
+    		effort 8h
+    		precedes !execution
+    		allocate nh, ga
+    		limits {maximum 2h {resources nh}}
+    	}
+    	task execution "Execution" {
+    		end 2021-06-30
+    		duration 4h
+    		allocate nh,kb,ga
+    	}
     }
 }

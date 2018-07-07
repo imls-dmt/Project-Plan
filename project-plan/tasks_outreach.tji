@@ -1,0 +1,41 @@
+task outreach "Outreach" {
+	task workshop_01 "RDAP 2019 Workshop" {
+		task planning "Planning" {
+			allocate nh,kb,ga
+			effort 60h
+			limits {maximum 16h {resources kb,nh}} 
+			precedes !execution
+		}
+		task execution "Present Workshop" {
+			allocate nh,kb,ga
+			start 2019-05-14
+			duration 4d
+		}
+	}
+	task workshop_02 "RDAP 2020 Workshop" {
+		task planning "Planning" {
+			allocate nh,kb,ga
+			effort 60h
+			limits {maximum 16h {resources kb,nh}} 
+			precedes !execution
+		}
+		task execution "Present Workshop" {
+			allocate nh,kb,ga
+			start 2020-05-01
+			duration 4d
+		}
+	}
+	task workshop_03 "ACRL 2021 Workshop" {
+		task planning "Planning" {
+			allocate nh,kb,ga
+			effort 60h
+			limits {maximum 16h {resources kb,nh}} 
+			precedes !execution
+		}
+		task execution "Present Workshop" {
+			allocate nh,kb,ga
+			start 2021-05-01
+			duration 4d
+		}
+	}
+}

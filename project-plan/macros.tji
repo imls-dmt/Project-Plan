@@ -1,0 +1,17 @@
+macro SPRINT [
+        	task plan "Plan" {
+        		allocate kb,nh,web,ab
+        		duration 2h
+        	}
+        	task execute "Execution"{
+        		allocate web
+        		effort ${1}
+        		depends !plan
+        	}
+        	task review "Review"{
+				allocate kb,nh,web,ab
+        		duration 2h
+        		depends !execute
+        	}
+]
+

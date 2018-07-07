@@ -1,4 +1,4 @@
-project "IMLS - DMT Clearinghouse Enhancement" "1.0pre" 2018-07-01 - 2021-06-30 {
+project "IMLS - DMT Clearinghouse Enhancement" "1.0pre" 2018-07-01 - 2021-12-31 {
 
 }
 
@@ -10,6 +10,7 @@ flags administrative,
 	disseminationOutreach, 
 	milestones
 
+include "macros.tji"
 include "accounts.tji"
 include "holidays.tji"
 include "resources.tji"
