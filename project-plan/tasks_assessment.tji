@@ -25,11 +25,11 @@ task assessment "Assessment" {
 		task sprints "Development" {
 			depends !!assessment_planning.release_plan
 			task sprint_01 "Sprint" {
-				${SPRINT "40h"}
+				${SPRINT "40h" "awg"}
 			}
 			task sprint_02 "Sprint" {
 				depends !sprint_01
-				${SPRINT "40h"}
+				${SPRINT "40h" "awg"}
 			}
 		}
 	}

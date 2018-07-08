@@ -1,5 +1,5 @@
 taskreport breakdown "reports/ProjectBreakdown" {
-  formats html
+  formats html, csv
   caption "IMLS Master Project Breakdown"
   headline "IMLS Master Project Breakdown"
   columns name {width 300}, effort {width 100 scale hour}, chart {width 700 scale quarter}
@@ -8,11 +8,12 @@ taskreport breakdown "reports/ProjectBreakdown" {
   hideresource 0
   # rolluptask summary_report
   sorttasks tree, index.up
+ 
 }
 
 taskreport breakdown_noresources "reports/ProjectBreakdown-NoResources" {
-  formats html
-  caption "IMLS Master Project Breakdown"
+  formats html,csv
+  caption "IMLS Task Summary - Excluding Resources"
   headline "IMLS Master Project Breakdown"
   columns name {width 300}, effort {width 100 scale hour}, chart {width 700 scale quarter}
   hidetask treelevel() > 4
@@ -20,4 +21,62 @@ taskreport breakdown_noresources "reports/ProjectBreakdown-NoResources" {
   hideresource 1
   # rolluptask summary_report
   sorttasks tree, index.up
+  
+}
+
+resourcereport resource_summary "reports/ResourceSummaryReport" {
+	formats html,csv
+	headline "Resource Summary Report"
+	caption "Summary of IMLS Project Resources (effort in hours)"
+	columns name, balance, cost, effort, quarterly
+	loadunit hours
+	balance project_costs award
+	sortresources tree
+	start ${projectstart}
+}
+
+resourcereport resource_summary_Y1 "reports/ResourceSummaryReport_y1" {
+	formats html,csv
+	headline "Resource Summary Report"
+	caption "Summary of IMLS Project Resources (effort in hours)"
+	columns name, balance, cost, effort, monthly
+	loadunit hours
+	balance project_costs award
+	sortresources tree
+	start ${projectstart}
+	end %{${projectstart} + 1y}
+}
+
+resourcereport resource_summary_Y2 "reports/ResourceSummaryReport_y2" {
+	formats html,csv
+	headline "Resource Summary Report"
+	caption "Summary of IMLS Project Resources (effort in hours)"
+	columns name, balance, cost, effort, monthly
+	loadunit hours
+	balance project_costs award
+	sortresources tree
+	start %{${projectstart} + 1y}
+	end %{${projectstart} + 2y}
+}
+
+resourcereport resource_summary_Y3 "reports/ResourceSummaryReport_y3" {
+	formats html,csv
+	headline "Resource Summary Report"
+	caption "Summary of IMLS Project Resources (effort in hours)"
+	columns name, balance, cost, effort, monthly
+	loadunit hours
+	balance project_costs award
+	sortresources tree
+	start %{${projectstart} + 2y}
+	end %{${projectstart} + 3y}
+}
+
+textreport frame "" {
+	textreport index "reports/Overview" {
+		formats html
+		center '<[report id = "resource_summary"]>'
+		center '<[report id = "resource_summary_Y1"]>'
+		center '<[report id = "resource_summary_Y2"]>'
+		center '<[report id = "resource_summary_Y3"]>'
+	}
 }

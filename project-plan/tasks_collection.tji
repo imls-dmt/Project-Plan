@@ -21,9 +21,11 @@ task collection "Collections Development" {
     		limits {maximum 2h {resources nh}}
     	}
     	task execution "Execution" {
+    		priority 1000
     		end 2019-06-30
-    		duration 4h
+    		effort 6h
     		allocate nh,kb,ga
+    		limits {maximum 2h {resources nh,kb,ga}}
     	}
     }
     task crowdsource_02 "Collection Development Crowdsource Event" {
@@ -34,9 +36,11 @@ task collection "Collections Development" {
     		limits {maximum 2h {resources nh}}
     	}
     	task execution "Execution" {
+    		priority 1000
     		end 2020-06-30
-    		duration 4h
+    		effort 6h
     		allocate nh,kb,ga
+    		limits {maximum 2h {resources nh,kb,ga}}
     	}
     }
     task crowdsource_03 "Collection Development Crowdsource Event" {
@@ -47,9 +51,11 @@ task collection "Collections Development" {
     		limits {maximum 2h {resources nh}}
     	}
     	task execution "Execution" {
+    		priority 1000
     		end 2021-06-30
-    		duration 4h
+    		effort 6h
     		allocate nh,kb,ga
+    		limits {maximum 2h {resources nh,kb,ga}}
     	}
     }
 }

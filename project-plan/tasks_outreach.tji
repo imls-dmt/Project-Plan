@@ -10,6 +10,7 @@ task outreach "Outreach" {
 			allocate nh,kb,ga
 			start 2019-05-14
 			duration 4d
+			priority 1000
 		}
 	}
 	task workshop_02 "RDAP 2020 Workshop" {
@@ -23,6 +24,7 @@ task outreach "Outreach" {
 			allocate nh,kb,ga
 			start 2020-05-01
 			duration 4d
+			priority 1000
 		}
 	}
 	task workshop_03 "ACRL 2021 Workshop" {
@@ -36,6 +38,7 @@ task outreach "Outreach" {
 			allocate nh,kb,ga
 			start 2021-05-01
 			duration 4d
+			priority 1000
 		}
 	}
 }

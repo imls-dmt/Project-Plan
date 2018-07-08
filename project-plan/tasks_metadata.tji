@@ -1,19 +1,19 @@
 task metadata "Metadata Enhancement" {
 	task metadata_planning "Planning" {
 		task draft "Draft Recommendation" {
-			allocate kb,nh,ab
+			allocate kb,nh,mwg
 			duration 3m
 			depends admin.form_metadata_wg
 			limits {maximum 16h {resources kb,nh}}
 		}
 		task final "Final Model" {
-			allocate kb,nh,ab
+			allocate kb,nh,mwg
 			duration 10w
 			depends !draft
 			limits {maximum 16h {resources kb,nh}}
 		}
 		task release_plan "Metadata Model Release Plan" {
-			allocate kb,nh,ab,web
+			allocate kb,nh,mwg,web
 			duration 1m
 			depends admin.hire_web
 			depends !final
@@ -22,22 +22,22 @@ task metadata "Metadata Enhancement" {
 	}
 
 	task metadata_development "Implementation" {
+		depends !metadata_planning.release_plan
 		task sprints "Development" {
-			depends !!metadata_planning.release_plan
 			task sprint_01 "Sprint" {
-				${SPRINT "30h"}
+				${SPRINT "30h" "mwg"}
 			}
 			task sprint_02 "Sprint" {
 				depends !sprint_01
-				${SPRINT "30h"}
+				${SPRINT "30h" "mwg"}
 			}
 			task sprint_03 "Sprint" {
 				depends !sprint_02
-				${SPRINT "30h"}
+				${SPRINT "30h" "mwg"}
 			}
 			task sprint_04 "Sprint" {
 				depends !sprint_03
-				${SPRINT "30h"}
+				${SPRINT "30h" "mwg"}
 			}
 		}
 	}

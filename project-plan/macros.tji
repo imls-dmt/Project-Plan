@@ -1,21 +1,32 @@
 macro SPRINT [
         	task plan "Plan" {
-        		allocate kb,nh,web,ab
-        		effort 8h
-        		priority 600
-        		limits {maximum 2h {resources kb,nh,web,ab}} 
+        		allocate kb, nh, web, ${2}
+        		effort 6h
+        		limits {maximum 2h {resources kb,nh,web}} 
         	}
         	task execute "Execution"{
         		allocate web
         		effort ${1}
-        		priority 600
         		depends !plan
         	}
         	task review "Review"{
 				allocate kb,nh,web,ab
-        		effort 8h
-        		priority 600
-        		limits {maximum 2h {resources kb,nh,web,ab}}
+        		effort 6h
+        		limits {maximum 2h {resources kb,nh,web}}
         	}
+]
+
+macro ADVISORY_MEETING [
+			task plan "Meeting planning" {
+				allocate kb,nh
+				effort 4h
+			}
+			task meeting "Meeting" {
+				depends !plan
+				allocate kb, nh, ab
+				effort 10h
+				limits {maximum 4h {resources kb,nh}  maximum 2h {resources ab}}
+			}
+
 ]
 

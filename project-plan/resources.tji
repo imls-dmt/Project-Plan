@@ -2,7 +2,7 @@ resource kb "Karl Benedict" {
 	limits {
 		dailymax 8h
 		weeklymax 20h
-		monthlymax 20h
+		monthlymax 30h
 	}
 	rate 385
 }
@@ -10,8 +10,8 @@ resource kb "Karl Benedict" {
 resource nh "Nancy Hoebelheinrich" {
 	limits {
 		dailymax 4h
-		weeklymax 15h
-		monthlymax 30h
+		weeklymax 40h
+		monthlymax 40h
 	}
 	rate 1000
 }
@@ -42,25 +42,37 @@ resource web "Web Developer" {
 		    end 2021-06-30
 		}
 	}
-	rate 56.90		
+	rate 454.55		
 }
 
 resource ab "Advisory Board" {
-	efficiency 0 
+	efficiency 1 
 	rate 0
+	limits {monthlymax 4h}
 }
 
 resource awg "Assessment Working Group" {
-	efficiency 0 
+	efficiency 1 
 	rate 0
+	limits {monthlymax 4h}
+}
+
+resource mwg "Metadata Working Group" {
+	efficiency 1
+	rate 0
+	limits {monthlymax 4h}
 }
 
 resource cwg "Collection Working Group" {
-	efficiency 0
+	efficiency 1
 	rate 0
+	limits {monthlymax 4h}
 }
 
+
+
 resource eb "Editorial Board" {
-	efficiency 0
+	efficiency 1
 	rate 0
+	limits {monthlymax 8h}
 }

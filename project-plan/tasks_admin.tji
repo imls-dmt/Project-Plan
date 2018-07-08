@@ -20,7 +20,7 @@ task admin "Administrative" {
     task form_selection_wg "Form Selection Criteria Working Group" {
         start 2018-08-15
         allocate nh
-        duration 2w
+        effort 8h
         limits {weeklymax 4h {resources nh}}
         depends admin.form_ab
     }
@@ -28,7 +28,7 @@ task admin "Administrative" {
     task form_metadata_wg "Form Metadata Enhancement Working Group" {
         start 2018-08-15
         allocate kb
-        duration 2w
+        effort 8h
         limits {weeklymax 4h {resources kb}}
         depends admin.form_ab
     }
@@ -36,193 +36,100 @@ task admin "Administrative" {
     task hire_ga_y1 "Hire Graduate Assistant (Year 1)" {
         end 2018-08-01
         allocate kb
-        duration 4w
-        limits {monthlymax 8h {resources kb}}
+        effort 4h
+        limits {weeklymax 1h {resources kb}}
     }
     
     task hire_ga_y2 "Hire Graduate Assistant (Year 2)" {
         end 2019-08-01
         allocate kb
-        duration 4w
-        limits {monthlymax 8h {resources kb}}
+        effort 4h
+        limits {weeklymax 1h {resources kb}}
     }
     
     task hire_ga_y3 "Hire Graduate Assistant (Year 3)" {
         end 2020-08-01
         allocate kb
-        duration 4w
-        limits {monthlymax 8h {resources kb}}
+        effort 4h
+        limits {weeklymax 1h {resources kb}}
     }
     
     task hire_web "Hire Web Application Developer" {
         start 2018-10-01
         allocate kb
-        duration 6w
-        limits {weeklymax 4h {resources kb}}
+        effort 12h
+        limits {weeklymax 2h {resources kb}}
     }
     
     task reports "Project Reports" {
         task report_y1 "Year 1 - Interim Report" {
             end 2019-06-30
-            allocate kb
+            allocate kb,nh
             effort 20h
+        	limits {weeklymax 8h {resources kb} weeklymax 2h {resources nh}}
         }
         task report_y2 "Year 2 - Interim Report" {
             end 2020-06-30
-            allocate kb
+            allocate kb,nh
             effort 20h
+        	limits {weeklymax 8h {resources kb} weeklymax 2h {resources nh}}
         }
         task report_y3 "Year 3 - Final Report" {
             end 2021-06-30
-            allocate kb
+            allocate kb,nh
             effort 30h
+        	limits {weeklymax 8h {resources kb} weeklymax 2h {resources nh}}
         }
     }
     
 	task meetings_ab "Advisory Board Meetings" {
 		task meetings_ab_01 "Meeting" {
 			start 2018-09-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_02 "Meeting" {
 			start 2018-12-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 	   task meetings_ab_03 "Meeting" {
 			start 2019-03-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_04 "Meeting" {
 			start 2019-06-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_05 "Meeting" {
 			start 2019-09-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_06 "Meeting" {
 			start 2019-12-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
-	   task meetings_ab_07 "Meeting" {
+		task meetings_ab_07 "Meeting" {
 			start 2020-03-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_08 "Meeting" {
 			start 2020-06-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_09 "Meeting" {
 			start 2020-09-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_10 "Meeting" {
 			start 2020-12-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 	   task meetings_ab_11 "Meeting" {
 			start 2021-03-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 		task meetings_ab_12 "Meeting" {
 			start 2021-06-15
-			task plan "Meeting planning" {
-				allocate kb,nh
-				effort 4h
-			}
-			task meeting "Meeting" {
-				depends !plan
-				allocate kb, nh, ab
-				effort 6h
-			}
+			${ADVISORY_MEETING}
 		}
 	}
 
