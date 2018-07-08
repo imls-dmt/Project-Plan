@@ -1,2 +1,2 @@
 # 2018-IMLS-Project
-Private Repository for 2018 IMLS NLG (DMT Clearinghouse Enhancement &amp; Outreach)
+Public repository for the IMLS NLG - LG-70-18-0092-18 Project (DMT Clearinghouse Enhancement &amp; Outreach)
