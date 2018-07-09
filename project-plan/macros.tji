@@ -13,6 +13,7 @@ macro SPRINT [
 				allocate kb,nh,web,${2}
         		effort 6h
         		limits {maximum 2h {resources kb,nh,web}}
+			depends !execute
         	}
 ]
 
