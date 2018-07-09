@@ -10,7 +10,7 @@ macro SPRINT [
         		depends !plan
         	}
         	task review "Review"{
-				allocate kb,nh,web,ab
+				allocate kb,nh,web,${2}
         		effort 6h
         		limits {maximum 2h {resources kb,nh,web}}
         	}
