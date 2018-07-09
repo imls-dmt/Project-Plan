@@ -1,10 +1,23 @@
 resource kb "Karl Benedict" {
 	limits {
-		dailymax 8h
-		weeklymax 20h
-		monthlymax 30h
+		dailymax 4h
+		weeklymax 40h
+		monthlymax 40h
+		maximum 24d {
+			start 2018-07-01
+			end 2019-06-30
+		}
+		maximum 20d {
+			start 2019-07-01
+			end 2020-06-30
+		}
+		maximum 20d {
+			start 2020-07-01
+			end 2021-06-30
+		}
 	}
-	rate 385
+	rate 0
+	chargeset pi_salary
 }
 
 resource nh "Nancy Hoebelheinrich" {
@@ -12,17 +25,31 @@ resource nh "Nancy Hoebelheinrich" {
 		dailymax 4h
 		weeklymax 40h
 		monthlymax 40h
+		maximum 23d {
+			start 2018-07-01
+			end 2019-06-30
+		}
+		maximum 23d {
+			start 2019-07-01
+			end 2020-06-30
+		}
+		maximum 23d {
+			start 2020-07-01
+			end 2021-06-30
+		}
 	}
-	rate 1000
+	rate 0
+	chargeset coi_costs
 }
+
 
 resource ga "Graduate Assistant" {
 	limits {
-		dailymax 4h
 		weeklymax 10h
-		monthlymax 43h
+		monthlymax 40h
 	}
-	rate 135	
+	rate 135
+	chargeset ga_stipend	
 }
 
 resource web "Web Developer" {
@@ -42,7 +69,8 @@ resource web "Web Developer" {
 		    end 2021-06-30
 		}
 	}
-	rate 454.55		
+	rate 454.55
+	chargeset web_costs		
 }
 
 resource ab "Advisory Board" {
@@ -51,13 +79,7 @@ resource ab "Advisory Board" {
 	limits {monthlymax 4h}
 }
 
-resource awg "Assessment Working Group" {
-	efficiency 1 
-	rate 0
-	limits {monthlymax 4h}
-}
-
-resource mwg "Metadata Working Group" {
+resource eb "Editorial Board" {
 	efficiency 1
 	rate 0
 	limits {monthlymax 4h}
@@ -69,10 +91,14 @@ resource cwg "Collection Working Group" {
 	limits {monthlymax 4h}
 }
 
-
-
-resource eb "Editorial Board" {
+resource mwg "Metadata Working Group" {
 	efficiency 1
 	rate 0
-	limits {monthlymax 8h}
+	limits {monthlymax 4h}
+}
+
+resource awg "Assessment Working Group" {
+	efficiency 1 
+	rate 0
+	limits {monthlymax 4h}
 }

@@ -1,5 +1,6 @@
 task web "Web Development" {
-	task search_01 "Search Interface - Phase 1" {
+    chargeset task_costs
+    task search_01 "Search Interface - Phase 1" {
 		depends metadata.metadata_development.sprints.sprint_02
 		task sprint_01 "Sprint" {
 			${SPRINT "20h" "mwg"}

@@ -1,23 +1,24 @@
 task metadata "Metadata Enhancement" {
-	task metadata_planning "Planning" {
+    chargeset task_costs
+    task metadata_planning "Planning" {
 		task draft "Draft Recommendation" {
 			allocate kb,nh,mwg
 			duration 3m
 			depends admin.form_metadata_wg
-			limits {maximum 16h {resources kb,nh}}
+			limits {maximum 16h {resources kb,nh,mwg}}
 		}
 		task final "Final Model" {
 			allocate kb,nh,mwg
 			duration 10w
 			depends !draft
-			limits {maximum 16h {resources kb,nh}}
+			limits {maximum 16h {resources kb,nh,mwg}}
 		}
 		task release_plan "Metadata Model Release Plan" {
 			allocate kb,nh,mwg,web
 			duration 1m
 			depends admin.hire_web
 			depends !final
-			limits {maximum 16h {resources kb,nh,web}}
+			limits {maximum 16h {resources kb,nh,web,mwg}}
 		}
 	}
 

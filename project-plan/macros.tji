@@ -30,3 +30,15 @@ macro ADVISORY_MEETING [
 
 ]
 
+macro EFFORT_INFO [
+		-8<-
+			=== Maximum budgeted effort (in days) ===
+			* Karl Benedict (PI): 5 days/year = 15 days total
+			* Nancy Hoebelheinrich (Co-I): 18 days/year = 54 days total
+			* Graduate Assistant (GA): 60 days/year = 180 days total
+			* Web Developer: 8.75 yr 1 + 33/yr in years 2 and 3 = 74.75 days total
+		->8-
+]
+
+
+

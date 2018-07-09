@@ -1,5 +1,6 @@
 task outreach "Outreach" {
-	task workshop_01 "RDAP 2019 Workshop" {
+    chargeset task_costs
+    task workshop_01 "RDAP 2019 Workshop" {
 		task planning "Planning" {
 			allocate nh,kb,ga
 			effort 60h

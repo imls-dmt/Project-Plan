@@ -1,5 +1,6 @@
 task usability "Usability Testing" {
-	task usability_01 "Phase 1" {
+    chargeset task_costs
+    task usability_01 "Phase 1" {
 		depends web.search_01
 		allocate ga, nh
 		effort 8h

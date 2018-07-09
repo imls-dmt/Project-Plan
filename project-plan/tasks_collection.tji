@@ -1,4 +1,5 @@
 task collection "Collections Development" {
+    chargeset task_costs
     task selection_policy "Develop Selection Criteria / Collection Development Policy" {
         task draft "Develop Draft Selection Criteria Policy" {
             allocate kb,nh,cwg
@@ -13,6 +14,30 @@ task collection "Collections Development" {
             limits {maximum 16h {resources kb,nh}}
         }
     }
+    task register_resources "Registration of New DMT Resources" {
+    	task year_01 "Year 1" {
+    		priority 400
+    		start ${projectstart}
+    		duration 12m
+    		allocate ga, eb, nh
+    		limits {monthlymax 4h {resources eb} monthlymax 4h {resources nh}}
+    	}
+    	task year_02 "Year 2" {
+    		priority 400
+    		start %{${projectstart} + 1y}
+    		duration 12m
+    		allocate ga, eb, nh
+    		limits {monthlymax 4h {resources eb} monthlymax 4h {resources nh}}
+    	}
+    	task year_03 "Year 3" {
+    		priority 400
+    		start %{${projectstart} + 2y}
+    		duration 10m
+    		allocate ga, eb, nh
+    		limits {monthlymax 4h {resources eb} monthlymax 4h {resources nh}}
+    	}
+    }
+    
     task crowdsource_01 "Collection Development Crowdsource Event" {
     	task planning "Planning" {
     		effort 8h

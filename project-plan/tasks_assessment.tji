@@ -1,5 +1,6 @@
 task assessment "Assessment" {
-	task assessment_planning "Planning" {
+    chargeset task_costs
+    task assessment_planning "Planning" {
 		task draft "Draft Recommendation" {
 			allocate kb,nh,awg
 			duration 3m

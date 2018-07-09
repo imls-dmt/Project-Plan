@@ -1,6 +1,7 @@
 project "IMLS - DMT Clearinghouse Enhancement" "1.0pre" 2018-07-01 +3y {
-  workinghours mon - fri 9:00 - 12:00, 13:00 - 18:00
-  workinghours sat, sun off
+	workinghours mon - fri 9:00 - 12:00, 13:00 - 18:00
+	workinghours sat, sun off
+	currencyformat "(" ")" "," "." 0
 }
 
 flags administrative, 

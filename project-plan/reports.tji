@@ -14,7 +14,7 @@ textreport frame "reports/index" {
 	textreport "" {	
 		title "Resource Utilization"
 		purge formats
-		columns name, balance, cost, effort, quarterly
+		columns name, effort, quarterly
 		loadunit days
 		balance project_costs award
 		sortresources tree
@@ -22,60 +22,65 @@ textreport frame "reports/index" {
 		resourcereport resource_summary "reports/ResourceSummaryReport" {
 			formats html,csv
 			title "Overall"
-			headline "Resource Summary Report"
-			caption "Summary of IMLS Project Resources (effort in days)"
+			headline "Resource Summary Report (effort in days)"
+			columns name, effort, quarterly
+			caption ${EFFORT_INFO}
 			start ${projectstart}
 		}
 
 		resourcereport resource_summary_tasks "reports/ResourceSummaryReportTasks" {
 			formats html,csv
 			title "Overall with Tasks"
-			headline "Resource Summary Report - With Tasks"
-			caption "Summary of IMLS Project Resources (effort in days)"
-			hidetask 0
+			headline "Resource Summary Report - With Tasks (effort in days)"
+			columns name, effort, quarterly
+			caption ${EFFORT_INFO}
+			hidetask treelevel() > 1
 			start ${projectstart}
 		}
 
 		resourcereport resource_summary_Y1 "reports/ResourceSummaryReport_y1" {
 			formats html,csv
 			title "Year 1"
-			headline "Resource Summary Report - Year 1"
-			caption "Summary of IMLS Project Resources (effort in days)"
-			start ${projectstart}
-			end %{${projectstart} + 1y}
+			headline "Resource Summary Report - Year 1 (effort in days)"
+			columns name, effort, monthly
+			hidetask treelevel() > 2
+			caption ${EFFORT_INFO}
+			period ${projectstart} - %{${projectstart} + 1y}
 		}
 
 		resourcereport resource_summary_Y2 "reports/ResourceSummaryReport_y2" {
 			formats html,csv
-			headline "Resource Summary Report - Year 2"
+			headline "Resource Summary Report - Year 2 (effort in days)"
 			title "Year 2"
-			caption "Summary of IMLS Project Resources (effort in days)"
-			start %{${projectstart} + 1y}
-			end %{${projectstart} + 2y}
+			columns name, effort, monthly
+			hidetask treelevel() > 2
+			caption ${EFFORT_INFO}
+			period %{${projectstart} + 1y} - %{${projectstart} + 2y}
 		}
 
 		resourcereport resource_summary_Y3 "reports/ResourceSummaryReport_y3" {
 			formats html,csv
-			headline "Resource Summary Report - Year 3"
+			headline "Resource Summary Report - Year 3 (effort in days)"
 			title "Year 3"
-			caption "Summary of IMLS Project Resources (effort in days)"
-			start %{${projectstart} + 2y}
-			end %{${projectstart} + 3y}
+			columns name, effort, monthly
+			hidetask treelevel() > 2
+			caption ${EFFORT_INFO}
+			period %{${projectstart} + 2y} - %{${projectstart} + 3y}
 		}
 	}
 	
 	textreport "" {
 		title "Task Reports"
 		purge formats
-		columns name {width 300}, effort {width 100 scale hour}, chart {width 700 scale quarter}
+		columns name {width 300}, effort {width 100 scale day},chart {width 700 scale quarter}
 		sortresources tree
-		hidetask treelevel() > 4
+		hidetask treelevel() > 3
 		sorttasks tree, index.up
 		
 		taskreport breakdown "reports/ProjectBreakdown" {
 		  formats html, csv
-		  title "Task Breakdown - No Resources"
-		  caption "IMLS Master Project Breakdown"
+		  title "Task Breakdown - With Resources"
+		  caption "IMLS Master Project Breakdown (effort in days)"
 		  headline "IMLS Master Project Breakdown"
 		  # Don't hide any resource, meaning show them all.
 		  hideresource 0
@@ -85,16 +90,18 @@ textreport frame "reports/index" {
 
 		taskreport breakdown_noresources "reports/ProjectBreakdown-NoResources" {
 		  formats html,csv
-		  title "Task Breakdown - With Resources"
-		  caption "IMLS Task Summary - Excluding Resources"
+		  title "Task Breakdown - Without Resources"
+		  caption "IMLS Task Summary - Excluding Resources (effort in days)"
 		  headline "IMLS Master Project Breakdown - No Resources"
 		  # Don't hide any resource, meaning show them all.
 		  hideresource 1
 		  # rolluptask summary_report
   
-		}
-
-
-	
+		}	
 	}
+}
+
+accountreport "reports/ProfitAndLoss" {
+  formats html
+  columns no, name, quarterly
 }

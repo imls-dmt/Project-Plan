@@ -1,78 +1,78 @@
-account award "Award Amount - Annualized"{
-	account pi_cost "PI effort cost" {
-		account pi_salary "PI salary" {
+account award "Award Amount - Annualized" {
+	account pi_budget "PI effort budget" {
+		account pi_budget_salary "PI salary" {
 			credits 2018-07-01 "Year 1" 2146,
 					2019-07-01 "Year 2" 2210,
 					2020-07-01 "Year 3" 2277
 		}
-		account pi_fringe "PI fringe" {
+		account pi_budget_fringe "PI fringe" {
 			credits 2018-07-01 "Year 1" 637,
 					2019-07-01 "Year 2" 650,
 					2020-07-01 "Year 3" 674
 		}
 	}
 
-	account coi_cost "Co-I effort cost" {
+	account coi_budget "Co-I effort budget" {
 		credits 2018-07-01 "Year 1" 18000,
 				2019-07-01 "Year 2" 18000,
 				2020-07-01 "Year 3" 18000
 
 	}
 
-	account ga_cost "Graduate assistant effort cost" {
-		account ga_stipend "Graduate assistant stipend" {
+	account ga_budget "Graduate assistant effort cost" {
+		account ga_budget_stipend "Graduate assistant stipend" {
 			credits 2018-07-01 "Year 1" 8776,
 					2019-07-01 "Year 2" 9039,
 					2020-07-01 "Year 3" 9310
 		}
-		account ga_tuition "Graduate student tuition" {
+		account ga_budget_tuition "Graduate student tuition" {
 			credits 2018-07-01 "Year 1" 2158,
 					2019-07-01 "Year 2" 2287,
 					2020-07-01 "Year 3" 2424
 		}
-		account ga_insurance "Graduate student insurance" {
+		account ga_budget_insurance "Graduate student insurance" {
 			credits 2018-07-01 "Year 1" 2236,
 					2019-07-01 "Year 2" 2460,
 					2020-07-01 "Year 3" 2706
 		}
-		account ga_fringe "Graduate student fringe benefits" {
+		account ga_budget_fringe "Graduate student fringe benefits" {
 			credits 2018-07-01 "Year 1" 88,
 					2019-07-01 "Year 2" 90,
 					2020-07-01 "Year 3" 93
 		}
 	}
 
-	account devel_cost "Web developer cost" {
+	account devel_budget "Web developer budget" {
 			credits 2018-07-01 "Year 1" 4000,
 					2019-07-01 "Year 2" 15000,
 					2020-07-01 "Year 3" 15000
 	}
 
-	account participants "Participant costs" {
-		account participant_travel "Participant travel costs" {
+	account participants_budget "Participant budget" {
+		account participant_budget_travel "Participant travel budget" {
 			credits 2018-07-01 "Year 1" 10500,
 					2019-07-01 "Year 2" 10500,
 					2020-07-01 "Year 3" 10500
 		}
-		account participant_other "Workshop logistics costs" {
+		account participant_budget_other "Workshop logistics budget" {
 			credits 2018-07-01 "Year 1" 4500,
 					2019-07-01 "Year 2" 4500,
 					2020-07-01 "Year 3" 4500
 		}
 	}
 
-	account travel "Travel costs" {
-		account pi_travel "PI travel costs" {
+	account travel_budget "Travel costs" {
+		account pi_budget_travel "PI travel costs" {
 			credits 2018-07-01 "Year 1" 1949,
 					2019-07-01 "Year 2" 2000,
 					2020-07-01 "Year 3" 2000
 		}
-		account coi_travel "Co-I travel costs" {
+		account coi_budget_travel "Co-I travel costs" {
 			credits 2018-07-01 "Year 1" 2053,
 					2019-07-01 "Year 2" 2000,
 					2020-07-01 "Year 3" 2000
 		}
-		account ga_travel "Graduate assistant travel costs" {
+		account ga_budget_travel "Graduate assistant travel costs" {
 			credits 2018-07-01 "Year 1" 1949,
 					2019-07-01 "Year 2" 2000,
 					2020-07-01 "Year 3" 2000
@@ -81,7 +81,16 @@ account award "Award Amount - Annualized"{
 }
 
 account project_costs "Project Costs" {
-	aggregate resources
+	account personnel_costs "Personnel Costs"{
+		aggregate resources
+		account pi_salary "PI salary"
+		account coi_costs "Co-I subaward costs"
+		account ga_stipend "GA stipend"
+		account web_costs "Web developer subaward costs"
+	}
+	account task_costs "Task Costs"{
+		aggregate tasks
+	}
 }
 
 balance project_costs award
